@@ -1,0 +1,36 @@
+<app-menu-main>
+
+</app-menu-main>
+<div class="container ">
+
+  <label class="label"> Get datas </label>
+
+  <div *ngIf="loading">
+    <img src="assets/loading.gif" height="50" />
+  </div>
+  <table class="table background" *ngIf="categories.length > 0" border="1">
+    <thead>
+      <tr>
+        <th><abbr title="Position">Id</abbr></th>
+        <th><abbr title="Played">Title</abbr></th>
+        <th><abbr title="Won">Description</abbr></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let cat of categories">
+      <td>
+        {{cat.id}}
+      </td>
+      <td>
+        {{cat.title}}
+      </td>
+      <td>
+        {{cat.description}}
+      </td>
+      <td>
+        <button (click)="goUpdate(cat.id)">
+          Update
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

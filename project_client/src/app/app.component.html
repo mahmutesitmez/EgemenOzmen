@@ -1,0 +1,58 @@
+<div class="landing_page">
+  <div class="container ">
+    <div class="column is-offset-one-fifth">
+      <label class="label"> Get datas </label>
+      <div class="field">
+        <button (click)="getClick()" class="button is-success button_weight">Get</button>
+      </div>
+
+      <table class="table background" *ngIf="categories.length > 0" border="1">
+        <thead>
+          <tr>
+            <th><abbr title="Position">Id</abbr></th>
+            <th><abbr title="Played">Title</abbr></th>
+            <th><abbr title="Won">Description</abbr></th>
+          </tr>
+        </thead>
+        <tr *ngFor="let cat of categories">
+
+          <td>
+            {{cat.id}}
+          </td>
+          <td>
+            {{cat.title}}
+          </td>
+          <td>
+            {{cat.description}}
+          </td>
+          <div *ngIf="cat.id != null">
+            <button (click)="deleteClick(cat.id)" class="button is-danger button_weight">Delete</button>
+          </div>
+          <div *ngIf="cat.id != null">
+            <a target="_blank">
+              <button (click)="putButton(cat.id,cat)" class="button is-link button_weight">
+                PUT
+              </button>
+            </a>
+          </div>
+
+        </tr>
+      </table>
+    </div>
+
+
+
+    <div class="column is-offset-one-fifth" *ngIf="newCategory != null">
+      <input type="text" placeholder="title" [(ngModel)]="newCategory.title" class="input is-primary input_weight" />
+      <input type="text" placeholder="description" [(ngModel)]="newCategory.description" class="input is-primary input_weight" />
+      <input type="text" placeholder="password" [(ngModel)]="newCategory.password" class="input is-primary input_weight" />
+      <input type="text" placeholder="repassword" [(ngModel)]="newCategory.rePassword" class="input is-primary input_weight" />
+      <button (click)="postClick()" class="button is-warning ">
+        POST
+      </button>
+    </div>
+
+
+  </div>
+</div>
+<router-outlet></router-outlet>

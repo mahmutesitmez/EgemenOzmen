@@ -1,0 +1,23 @@
+<div *ngIf ="this.app.categories != null" class="new">
+  
+    <div  class="column is-offset-4">
+        <div class="field">
+        <input type="number" placeholder="id"    class="input is-primary input_update"  [(ngModel)]="this.app.category.id" />
+        </div>
+        <div class="field">
+        <input type="text"  placeholder="Title"    class="input is-primary input_update"  [(ngModel)]="this.app.category.title" />
+        </div>
+        <div class="field">
+        <input type="text"  placeholder="Description"    class="input is-primary input_update" [(ngModel)]="this.app.category.description"  />
+        </div>
+  <div class="field">
+      <a target="_blank">
+      <button (click)="updateClick()" class="button is-success" >
+        Update
+      </button>
+    </a>
+  </div>
+</div>
+</div>
+
+

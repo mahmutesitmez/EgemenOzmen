@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\categories",
+    "\\src\\app\\catgories-edit",
+    "\\src\\app\\home",
+    "\\src\\app\\menu-main",
+    "\\src\\assets"
+  ],
+  "SelectedNode": "\\src\\app\\catgories-edit\\catgories-edit.component.ts",
+  "PreviewInSolutionExplorer": false
+}

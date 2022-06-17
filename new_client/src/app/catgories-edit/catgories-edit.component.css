@@ -1,0 +1,43 @@
+.master-box{
+    padding: 10px 5px 10px 5px;
+    width:60%;
+    margin:auto;
+    border:2px solid #808080;
+    border-radius:15px;
+}
+.field-box {
+  margin-bottom: 5px;
+  align-content: start;
+  align-items: start;
+  display: flex;
+}
+.label-box {
+  width: 200px;
+  
+  
+}
+.action-bar{
+    padding:10px;
+    padding-left:60%;
+
+}
+.action-bar button{
+    font-size:1.5em;
+    background-color:#2d4aa8;
+    color:#fff;
+    border-radius:5px;
+}
+label {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+input{
+    font-size:1.25em;
+    width:250px;
+    
+}
+textarea {
+  font-size: 1.25em;
+  width: 250px;
+}

@@ -1,0 +1,2 @@
+﻿ dotnet ef migrations add Update_002
+ dotnet ef database update

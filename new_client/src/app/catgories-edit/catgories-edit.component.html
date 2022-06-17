@@ -1,0 +1,27 @@
+<app-menu-main>
+
+</app-menu-main>
+<div class="master-box" *ngIf="category != null">
+  <div class="field-box">
+    <div class="label-box">
+      <label>Title</label>
+    </div>
+    <input type="text" [(ngModel)]="category.title" />
+  </div>
+  <div class="field-box">
+    <div class="label-box">
+      <label>Description</label>
+    </div>
+
+    <textarea type="text" [(ngModel)]="category.description" rows="1">
+    </textarea>
+  </div>
+  <div class="action-bar">
+    <button (click)="doUpdate()">
+      Update
+    </button>
+  </div>
+
+</div>
+
+

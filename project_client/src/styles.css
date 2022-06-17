@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.input_weight{
+width: 120px;
+}
+
+.background {
+    background-color: #fffb00fd;
+}
+.new{
+    display: none;
+}
+
+.button_weight{
+    width: 100px;
+    height: 25px;
+    margin: 0px 0px 3px 0px;
+    }
+.input_update{
+    width: 150px;
+}
