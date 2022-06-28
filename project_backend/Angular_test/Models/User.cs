@@ -4,6 +4,8 @@ namespace Angular_test.Models
 {
     public class User : BaseEntity
     {
+         
+
         [Key]
         public int Id { get; set; }
         public string Firstname { get; set; }

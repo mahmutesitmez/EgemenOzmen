@@ -13,5 +13,6 @@ namespace Angular_test.DomainServices
         User GetById(int id);
 
         List<User> GetAll();
+        object Login(User user);
     }
 }
