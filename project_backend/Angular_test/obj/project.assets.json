@@ -6083,24 +6083,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Egemen_Ozmen\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\mahmutEsitmez\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Egemen_Ozmen\\Desktop\\17-6-2022\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj",
+      "projectUniqueName": "C:\\Work\\dotnet\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj",
       "projectName": "Angular_test",
-      "projectPath": "C:\\Users\\Egemen_Ozmen\\Desktop\\17-6-2022\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj",
-      "packagesPath": "C:\\Users\\Egemen_Ozmen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Egemen_Ozmen\\Desktop\\17-6-2022\\EgemenOzmen\\project_backend\\Angular_test\\obj\\",
+      "projectPath": "C:\\Work\\dotnet\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj",
+      "packagesPath": "C:\\Users\\mahmutEsitmez\\.nuget\\packages\\",
+      "outputPath": "C:\\Work\\dotnet\\EgemenOzmen\\project_backend\\Angular_test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Egemen_Ozmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\mahmutEsitmez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6172,7 +6173,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.106\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

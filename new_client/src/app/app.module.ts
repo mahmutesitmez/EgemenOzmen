@@ -12,6 +12,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CatgoriesEditComponent } from './catgories-edit/catgories-edit.component';
 import { RouterModule } from '@angular/router';
 import { MenuMainComponent } from './menu-main/menu-main.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -21,7 +22,8 @@ import { MenuMainComponent } from './menu-main/menu-main.component';
     HomeComponent,
     CategoriesComponent,
     CatgoriesEditComponent,
-    MenuMainComponent
+    MenuMainComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

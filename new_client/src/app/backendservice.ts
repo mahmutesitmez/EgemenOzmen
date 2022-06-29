@@ -4,7 +4,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
 
+export class UserNG {
+  constructor(public Name: string,
+    public Email: string,
+    public LoginDate: any) {
 
+  }
+
+}
 
 
 @Injectable()
@@ -18,6 +25,7 @@ export class BackendService {
       'Authorization': 'my-auth-token'
     })
   }
+  private USER_KEY = "USER";
 
   constructor(private HttpClient: HttpClient) {
   }
@@ -37,6 +45,29 @@ export class BackendService {
   }
   getById(id: number) {
     return this.HttpClient.get(this.baseURL + "/api" + "/Category/" + id)
+  }
+  login(email: string, password: string) {
+    let model = {
+      Email: email,
+      Password: password
+    };
+    console.log("model", model);
+    return this.HttpClient.post(this.baseURL + "/api" + "/User/Login", model);
+  }
+
+  setClientUser(data: any) {
+    let userNG: UserNG = new UserNG(data.name,
+      data.email,
+      data.loginDate);
+    sessionStorage.setItem(this.USER_KEY, JSON.stringify(userNG));
+  }
+  getClientUser() {
+    let userng: any = sessionStorage.getItem(this.USER_KEY);
+    if (userng != null) {
+
+      return JSON.parse(userng);
+    }
+    return null;
   }
 }
 

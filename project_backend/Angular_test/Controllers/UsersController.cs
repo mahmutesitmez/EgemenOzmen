@@ -34,51 +34,21 @@ namespace Angular_test.Controllers
             return Ok(UserCRUD.GetById(id));
         }
       
-        // POST api/<UsersController>
+ 
         [HttpPost]
-        public IActionResult Post([FromBody] User user)
+        [Route("Register")]
+        public IActionResult Register(RegisterModel register)
         {
-            var newuser = UserCRUD.Add(user);
-            return Ok(newuser);
+         
+            return Ok(UserCRUD.Register(register));
         }
         [HttpPost]
-        [ValidateModel]
-        public IActionResult Post(string email, string password, [FromBody] User user)
+        [Route("Login")]
+        public IActionResult Login([FromBody] LoginModel login)
         {
-            var login = UserCRUD.Login(email,password);
-
-            return Ok(login);
-
-
-
-
-
-
+            var loginReturnModel = UserCRUD.Login(login.Email,login.Password);  
+            return Ok(loginReturnModel);    
         }
 
-        // PUT api/<UsersController>/5
-        [HttpPut("{id}")]
-        [ValidateModel]
-        public IActionResult Put(int id, [FromBody] User user)
-        {
-            var cat = UserCRUD.GetById(id);
-            if (cat != null)
-            {
-                cat = UserCRUD.Update(user);
-            }
-            else
-            {
-                return BadRequest("Geçersiz id");
-            }
-            return Ok(cat);
-        }
-
-        // DELETE api/<UsersController>/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            UserCRUD.Delete(id);
-            return Ok();
-        }
     }
 }
