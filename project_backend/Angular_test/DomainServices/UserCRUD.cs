@@ -49,7 +49,7 @@ namespace Angular_test.DomainServices
             return context.Users.Find(id);
         }
 
-        public User Login(string email, string password)
+        public User Login(string email, string password, User user)
         {
 
             

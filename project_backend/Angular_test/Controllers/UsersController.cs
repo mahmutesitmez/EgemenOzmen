@@ -43,16 +43,11 @@ namespace Angular_test.Controllers
         }
         [HttpPost]
         [ValidateModel]
-        public IActionResult Post(string email, string password, [FromBody] User user)
+        public IActionResult Login(string email, string password, [FromBody] User user)
         {
-            var login = UserCRUD.Login(email,password);
-
-            return Ok(login);
-
-
-
-
-
+            var useremail = user.Email;
+            var userpassword = user.Password;
+                
 
         }
 
