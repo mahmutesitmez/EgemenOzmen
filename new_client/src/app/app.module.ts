@@ -12,7 +12,10 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CatgoriesEditComponent } from './catgories-edit/catgories-edit.component';
 import { RouterModule } from '@angular/router';
 import { MenuMainComponent } from './menu-main/menu-main.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
+import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { MenuMainComponent } from './menu-main/menu-main.component';
     HomeComponent,
     CategoriesComponent,
     CatgoriesEditComponent,
-    MenuMainComponent
+    MenuMainComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,7 @@ import { MenuMainComponent } from './menu-main/menu-main.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BackButtonDisableModule.forRoot()
     
   ],
   providers: [BackendService],

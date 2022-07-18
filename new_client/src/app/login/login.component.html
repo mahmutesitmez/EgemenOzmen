@@ -1,0 +1,25 @@
+<div class="landing_page container">
+<div class="column is-11 is-offset-1">
+  <label>Email</label>
+  <br>
+  <input class="input is-rounded" [(ngModel)]="email" type="text" />
+</div>
+<div class="column is-11 is-offset-1">
+  <label>Password</label>
+  <br>
+  <input class="input is-rounded" [(ngModel)]="password" type="password" />
+</div> 
+<div class="container">
+  <div class="button_one column is-12 " >
+    <button class="button is-rounded " (click)="doLogin()">
+      Login
+    </button>
+  </div>
+</div>
+<div *ngIf="IsLogin != true" class="column is-11 is-offset-3" style="color: red;">
+{{Error}}
+</div>
+<div class="button_two column is-12 ">
+  <button class="button is-rounded  "  (click)="goRegister()" >Register</button>
+</div>
+</div>

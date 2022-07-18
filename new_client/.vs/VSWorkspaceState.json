@@ -3,12 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\categories",
-    "\\src\\app\\catgories-edit",
     "\\src\\app\\home",
+    "\\src\\app\\login",
     "\\src\\app\\menu-main",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\catgories-edit\\catgories-edit.component.ts",
+  "SelectedNode": "\\src\\app\\login\\login.component.ts",
   "PreviewInSolutionExplorer": false
 }
