@@ -127,7 +127,6 @@ C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\bin\Debug\net5.0\Angular_test.runtimeconfig.json
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\bin\Debug\net5.0\Angular_test.runtimeconfig.dev.json
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\bin\Debug\net5.0\Angular_test.dll
-C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\bin\Debug\net5.0\ref\Angular_test.dll
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\bin\Debug\net5.0\Angular_test.pdb
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\bin\Debug\net5.0\Catel.Core.dll
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\bin\Debug\net5.0\Humanizer.dll
@@ -181,3 +180,9 @@ C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\Angular_test.pdb
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\Angular_test.genruntimeconfig.cache
 C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\Angular_test.csproj.AssemblyReference.cache
+C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\staticwebassets\Angular_test.StaticWebAssets.Pack.cache
+C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\staticwebassets\msbuild.Angular_test.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\staticwebassets\msbuild.build.Angular_test.props
+C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Angular_test.props
+C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Angular_test.props
+C:\Users\Egemen_Ozmen\Desktop\17-6-2022\EgemenOzmen\project_backend\Angular_test\obj\Debug\net5.0\refint\Angular_test.dll

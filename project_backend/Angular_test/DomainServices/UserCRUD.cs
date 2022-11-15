@@ -15,9 +15,8 @@ namespace Angular_test.DomainServices
             this.context = context;
         }
 
-        private User add(User user)
+       public User add(User user)
         {
-
 
             var newuser = new User
             {
@@ -77,17 +76,23 @@ namespace Angular_test.DomainServices
 
 
 
-        public User Update(User user)
+        public User Update(RegisterModel user)
         {
-            var updateuser = context.Users.Find(user.Id);           //Find(model.Id) diyerek object ulaşıyoruz
-            updateuser.Firstname = user.Firstname;                               //Add'deki tanımlama yaparak yazıyoruz
-            updateuser.Lastname = user.Lastname;
-            updateuser.Email = user.Email;
-            updateuser.Password = user.Password;
-            context.Users.Update(updateuser);                          //Update ile gönderiyoruz
-            context.SaveChanges();
-            user.Id = updateuser.Id;                                //kaydediyoruz
-            return user;
+            var updateuser = GetByPassword(user.Password);
+            if (updateuser != null)
+            {
+                updateuser.Firstname = user.Firstname;                               //Add'deki tanımlama yaparak yazıyoruz
+                updateuser.Lastname = user.Lastname;
+                updateuser.Email = user.Email;
+                updateuser.Password = user.Password;
+                
+                context.Users.Update(updateuser);                          //Update ile gönderiyoruz
+                context.SaveChanges();
+            }
+            
+            //user.Password = updateuser.Password;                            
+            user.Password = updateuser.Password;                            
+            return updateuser;
         }
 
         public RegisterReturnModel Register(RegisterModel user)
@@ -137,6 +142,10 @@ namespace Angular_test.DomainServices
         public User GetByEmail(string email) //burada email çekiyoruz
         {
             return context.Users.Where(x => x.Email == email).FirstOrDefault();
+        }
+        public User GetByPassword(string password) 
+        {
+            return context.Users.Where(x => x.Password == password).FirstOrDefault();
         }
     }
 }

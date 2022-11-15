@@ -43,8 +43,11 @@ namespace Angular_test
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Angular_test", Version = "v1" });
             });
             services.AddDbContext<AppDbContext>(options =>
-              options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            });
+           
             services.AddTransient<ICategoryCRUD, CategoryCRUD>();
             services.AddTransient<IUserCRUD, UserCRUD>();
             

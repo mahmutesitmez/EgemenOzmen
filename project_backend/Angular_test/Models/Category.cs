@@ -10,7 +10,6 @@ namespace Angular_test.Models
         public string Title { get; set; }
         public string Description { get; set; }
 
-        public List<Todo> Todos { get; set; }
     }
 }
     

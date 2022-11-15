@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
+import { SettingsUserComponent } from './settings-user/settings-user.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
     CatgoriesEditComponent,
     MenuMainComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SettingsUserComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,9 @@ import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BackButtonDisableModule.forRoot()
+    BackButtonDisableModule.forRoot({
+      preserveScrollPosition: false
+    })
     
   ],
   providers: [BackendService],

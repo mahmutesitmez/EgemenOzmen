@@ -33,18 +33,16 @@ export class RegisterComponent implements OnInit {
           console.log(this.IsRegistered);
           if (data.isRegistered) {
             this.service.newClientUser(data);
-          
+            this.router.navigate(['']);
            
           }
           else{
-            
+            console.log("Daha önce yaratılmış")
           }
         })
-     
-  
-   
-
-  
+       }
+  Cancel(){
+    this.router.navigate(['']);
+  }
       
-    
-  }}
+      }

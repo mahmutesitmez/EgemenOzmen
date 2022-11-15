@@ -48,8 +48,11 @@ namespace Angular_test.Controllers
         [MyException]
         public IActionResult Post([FromBody] CategoryModel model)
         {
-            var category = categoryCRUD.Add(model); 
-            return Ok(category);
+        
+                var category = categoryCRUD.Add(model);
+                return Ok(category);
+            
+           
         }
 
         // PUT: api/Category/5
@@ -69,6 +72,8 @@ namespace Angular_test.Controllers
             }
             return Ok(cat);
         }
+
+
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]

@@ -14,7 +14,7 @@ namespace Angular_test.DomainServices
             this.context = context;
         }
 
-        public CategoryModel Add(CategoryModel model)
+        public CategoryModel Add(CategoryModel model) 
         {
             var category = new Category
             {
@@ -23,9 +23,9 @@ namespace Angular_test.DomainServices
                 CreatedOn = DateTime.Now,
                 ModifiedOn = DateTime.Now
             };
-            context.Categories.Add(category);
-            context.SaveChanges();
-            return categoryToModel(category);
+                context.Categories.Add(category);
+                context.SaveChanges();
+                return categoryToModel(category);                      
         }
 
         public void Delete(int id)
@@ -33,11 +33,11 @@ namespace Angular_test.DomainServices
             var category = GetById(id);
             context.Categories.Remove(modelToCategory(category));
             context.SaveChanges();
+                       
         }
 
-    
-
-        public List<CategoryModel> GetAll()
+     
+        public List<CategoryModel> GetAll()      
         {
             var cList = context.Categories.ToList();
             List<CategoryModel> models = new List<CategoryModel>();
@@ -48,18 +48,18 @@ namespace Angular_test.DomainServices
             return models;
         }
 
-        public CategoryModel GetById(int id)
+        public CategoryModel GetById(int id) 
         {
             return categoryToModel(context.Categories.Find(id));
         }
 
         private CategoryModel categoryToModel(Category category)
         {
-            CategoryModel model = new CategoryModel
+            var model = new CategoryModel
             {
-                Id = category.Id,
+               
                 Title = category.Title,
-                Description = category.Description,
+                Description = category.Description
             };
             return model;
         }
@@ -67,14 +67,13 @@ namespace Angular_test.DomainServices
         {
             Category category = new Category
             {
-                Id = model.Id,
                 Title = model.Title,
-                Description = model.Description,
+                Description = model.Description
             };
             return category;
         }
 
-        public CategoryModel Update(CategoryModel model)
+        public CategoryModel Update(CategoryModel model)  
         {
             var category = context.Categories.Find(model.Id);
             category.Title = model.Title;
@@ -83,7 +82,7 @@ namespace Angular_test.DomainServices
             context.Categories.Update(category);
             context.SaveChanges();
             model.Id = category.Id;
-            return model;
+            return model;                       
         }
     }
 }

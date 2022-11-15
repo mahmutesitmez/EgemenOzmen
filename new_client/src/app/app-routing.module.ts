@@ -5,6 +5,7 @@ import { CatgoriesEditComponent } from './catgories-edit/catgories-edit.componen
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SettingsUserComponent } from './settings-user/settings-user.component';
 
 const routes: Routes = [
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'categories', component: CategoriesComponent },
-  { path: 'categoriesedit/:id', component: CatgoriesEditComponent }
+  { path: 'categoriesedit/:id', component: CatgoriesEditComponent },
+  { path: 'settings', component: SettingsUserComponent }
 
 ];
 

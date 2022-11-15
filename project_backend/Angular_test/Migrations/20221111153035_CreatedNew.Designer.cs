@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Angular_test.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220621143401_CreatIntiliaze")]
-    partial class CreatIntiliaze
+    [Migration("20221111153035_CreatedNew")]
+    partial class CreatedNew
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,7 +74,7 @@ namespace Angular_test.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Todos");
+                    b.ToTable("Todo");
                 });
 
             modelBuilder.Entity("Angular_test.Models.User", b =>

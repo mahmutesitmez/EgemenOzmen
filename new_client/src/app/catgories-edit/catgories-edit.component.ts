@@ -33,5 +33,11 @@ export class CatgoriesEditComponent implements OnInit {
       this.router.navigate(['/categories']);
     })
   }
+  doDelete(){
+    console.log("doDelete()", this.category);
+    this.service.deleteCategory(this.category.id).subscribe(() =>{
+      this.router.navigate(['/categories'])
+    })
+  }
 
 }

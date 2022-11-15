@@ -11,10 +11,43 @@
 
   </div>
   <div class="username">
-    {{username}}
-    <a class="navbar-item" [routerLink]="['/login']">
-    LogOut
-  </a>
+  <div class="dropdown is-hoverable drop">
+    <div class="dropdown-trigger">
+      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+        <span> {{username}}</span>
+        
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+      <div class="dropdown-content drop">
+        <a [routerLink]="['/categories']" class="dropdown-item">
+          Overview
+        </a>
+        <a href="#" class="dropdown-item">
+          Modifiers
+        </a>
+        <a href="#" class="dropdown-item">
+          Grid
+        </a>
+        <a href="#" class="dropdown-item">
+          Form
+        </a>
+        <a href="#" class="dropdown-item">
+          Elements
+        </a>
+        <a [routerLink]="['/settings']" class="dropdown-item">
+          Account Settings
+        </a>
+       
+        <hr class="dropdown-divider">
+        <a class="navbar-item" [routerLink]="['/login']">
+          LogOut
+        </a>
+      </div>
+    </div>
   </div>
+</div>
+
+
  
 </div>

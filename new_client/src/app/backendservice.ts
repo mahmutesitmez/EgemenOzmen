@@ -46,6 +46,29 @@ export class BackendService {
   getById(id: number) {
     return this.HttpClient.get(this.baseURL + "/api" + "/Category/" + id)
   }
+  getUser(id:number){
+    return this.HttpClient.get(this.baseURL + "/api" + "/User/" + id)
+  }
+  updateUser(firstname:string, lastname:string , email: string, password: string, password2: string){
+    let update = {
+      Firstname: firstname,
+      Lastname: lastname,
+      Email: email,
+      Password: password,
+      Password2 :password2
+      
+    };
+    console.log("update",update)
+   
+    return this.HttpClient.put(this.baseURL + "/api" + "/User/"+ password + "/" + email, update)
+   
+  
+  }
+  
+  deleteUser(){
+
+  }
+
   login(email: string, password: string) {
     let model = {
       Email: email,

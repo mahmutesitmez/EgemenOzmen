@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container register_page">
 <div class="field">
     <label class="label">First Name</label>
     <div class="control">
@@ -10,12 +10,7 @@
     <label class="label">Last Name</label>
     <div class="control has-icons-left has-icons-right">
         <input class="input" [(ngModel)]="lastname" type="text" placeholder="Text input">
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
+     
     </div>
     <!-- <p class="help is-success">This username is available</p> -->
   </div>
@@ -24,40 +19,35 @@
     <label class="label">Email</label>
     <div class="control has-icons-left has-icons-right">
       <input class="input" [(ngModel)]="email" type="email" placeholder="Email input" >
-      <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-exclamation-triangle"></i>
-      </span>
-    <!-- </div>
+    
+      <div *ngIf="IsRegistered != true">
     <p class="help is-danger">This email is invalid</p>
-  </div> -->
+  </div>
+</div>
+</div>
   
   
   <div class="field">
     <label class="label">Password</label>
     <div class="control has-icons-left has-icons-right">
       <input class="input " [(ngModel)]="password" type="text" placeholder="Text input" >
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
-      <span class="icon is-small is-right">
-        <i class="fas fa-check"></i>
-      </span>
+
     </div>
+  </div>
 
     <div class="field">
         <label class="label">RePassword</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" [(ngModel)]="password2" placeholder="Text input">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
+          <input class="input" type="text"  [(ngModel)]="password2" placeholder="Text input">
+    
         </div>
+        <div *ngIf="password != password2">
+          <p class="help is-danger">Password is not same</p>
+        </div>
+      </div>
+    
+    
+
   
   
   
@@ -85,11 +75,11 @@
   </div>
   
   <div class="field is-grouped">
-    <div *ngIf="password == password2" class="control">
+    <div  class="control">
       <button class="button is-link" (click)="NewUser()">Submit</button>
     </div>
     <div class="control">
-      <button class="button is-link is-light">Cancel</button>
+      <button class="button is-link is-light"  (click)="Cancel()">Cancel</button>
     </div>
   </div>
 </div>
