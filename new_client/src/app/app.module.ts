@@ -13,7 +13,10 @@ import { CatgoriesEditComponent } from './catgories-edit/catgories-edit.componen
 import { RouterModule } from '@angular/router';
 import { MenuMainComponent } from './menu-main/menu-main.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
+import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
+import { SettingsUserComponent } from './settings-user/settings-user.component';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { LoginComponent } from './login/login.component';
     CategoriesComponent,
     CatgoriesEditComponent,
     MenuMainComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    SettingsUserComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,9 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BackButtonDisableModule.forRoot({
+      preserveScrollPosition: false
+    })
     
   ],
   providers: [BackendService],

@@ -1,0 +1,17 @@
+.landing_page{
+
+margin-top: 10em;
+background-color: aqua;
+
+width: 25%;
+}
+.button_one{
+    display: flex;
+    background-color:  aqua;
+    justify-content: center;
+}
+.button_two{
+    display: flex;
+    background-color: blue;
+    justify-content: center;
+}

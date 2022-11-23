@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\dotnet\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj": {}
+    "C:\\Users\\Egemen_Ozmen\\Desktop\\17-6-2022\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj": {}
   },
   "projects": {
-    "C:\\Work\\dotnet\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj": {
+    "C:\\Users\\Egemen_Ozmen\\Desktop\\17-6-2022\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\dotnet\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj",
+        "projectUniqueName": "C:\\Users\\Egemen_Ozmen\\Desktop\\17-6-2022\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj",
         "projectName": "Angular_test",
-        "projectPath": "C:\\Work\\dotnet\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj",
-        "packagesPath": "C:\\Users\\mahmutEsitmez\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\dotnet\\EgemenOzmen\\project_backend\\Angular_test\\obj\\",
+        "projectPath": "C:\\Users\\Egemen_Ozmen\\Desktop\\17-6-2022\\EgemenOzmen\\project_backend\\Angular_test\\Angular_test.csproj",
+        "packagesPath": "C:\\Users\\Egemen_Ozmen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Egemen_Ozmen\\Desktop\\17-6-2022\\EgemenOzmen\\project_backend\\Angular_test\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mahmutEsitmez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Egemen_Ozmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -79,7 +75,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -91,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

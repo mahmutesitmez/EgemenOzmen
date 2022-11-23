@@ -13,8 +13,8 @@ export class CategoriesComponent implements OnInit {
   public categories: Array<any> = [];
   public loading = false;
 
-  constructor(private service: BackendService,
-    private router: Router) {
+  constructor(public service: BackendService,
+    public router: Router) {
   }
 
   ngOnInit(): void {
@@ -32,6 +32,11 @@ export class CategoriesComponent implements OnInit {
     this.router.navigate(['categoriesedit/' + id]);
     console.log("Update!" + id);
 
+  }
+  doDelete(id: number){
+    this.service.deleteCategory(id).subscribe(() =>{
+      this.router.navigate(['/categories'])
+    })
   }
 
 }

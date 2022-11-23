@@ -72,7 +72,7 @@ namespace Angular_test.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Todos");
+                    b.ToTable("Todo");
                 });
 
             modelBuilder.Entity("Angular_test.Models.User", b =>

@@ -1,14 +1,14 @@
 <app-menu-main>
 
 </app-menu-main>
-<div class="container ">
+<div class="container categories ">
 
   <label class="label"> Get datas </label>
 
   <div *ngIf="loading">
     <img src="assets/loading.gif" height="50" />
   </div>
-  <table class="table background" *ngIf="categories.length > 0" border="1">
+  <table class="table " *ngIf="categories.length > 0" border="1">
     <thead>
       <tr>
         <th><abbr title="Position">Id</abbr></th>
@@ -29,6 +29,11 @@
       <td>
         <button (click)="goUpdate(cat.id)">
           Update
+        </button>
+      </td>
+      <td>
+        <button (click)="doDelete(cat.id)">
+         Delete
         </button>
       </td>
     </tr>

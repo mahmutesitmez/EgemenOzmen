@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Angular_test.Migrations
 {
-    public partial class CreatIntiliaze : Migration
+    public partial class CreatedNew : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,7 +42,7 @@ namespace Angular_test.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Todos",
+                name: "Todo",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -56,9 +56,9 @@ namespace Angular_test.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Todos", x => x.Id);
+                    table.PrimaryKey("PK_Todo", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Todos_Categories_CategoryId",
+                        name: "FK_Todo_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
@@ -66,15 +66,15 @@ namespace Angular_test.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Todos_CategoryId",
-                table: "Todos",
+                name: "IX_Todo_CategoryId",
+                table: "Todo",
                 column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Todos");
+                name: "Todo");
 
             migrationBuilder.DropTable(
                 name: "Users");

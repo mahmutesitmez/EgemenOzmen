@@ -5,12 +5,12 @@ namespace Angular_test.DomainServices
 {
     public interface ICategoryCRUD
     {
-        CategoryModel Add(CategoryModel model);    
-        CategoryModel Update(CategoryModel model);
+        CategoryModel Add(CategoryModel model);     
+        CategoryModel Update(CategoryModel model); 
         void Delete(int id);
          
         CategoryModel GetById(int id);
 
-        List<CategoryModel> GetAll();
+        List<CategoryModel> GetAll(); 
     }
 }

@@ -15,9 +15,8 @@ namespace Angular_test.DomainServices
             this.context = context;
         }
 
-        private User add(User user)
+       public User add(User user)
         {
-
 
             var newuser = new User
             {
@@ -42,7 +41,7 @@ namespace Angular_test.DomainServices
 
         public List<User> GetAll()
         {
-            return context.Users.ToList();
+            return context.Users.ToList();      
         }
 
         public User GetById(int id)
@@ -52,91 +51,101 @@ namespace Angular_test.DomainServices
 
         public LoginReturnModel Login(string email, string password)
         {
-            LoginReturnModel model = new LoginReturnModel() { IsLogin = false };
-            var user = GetByEmail(email);
+            LoginReturnModel xyz = new LoginReturnModel() { IsLogin = false }; //xyz olarak yerel değişken tanımlıyoruz
+            var user = GetByEmail(email); //email'i çekip user olarak tanımlıyoruz
 
-            if (user != null)
+            if (user != null)       
             {
                 if (user.Password != password)
                 {
-                    model.Message = "Kullanıcı emaili ya da şifresi yanlıştır!";
-                    model.IsLogin = true;
+                    xyz.Message = "Kullanıcı emaili ya da şifresi yanlıştır!";
+                    xyz.IsLogin = false;
                 }
-                else
+                else //LoginReturnModel'e göre tanımlanmış olanları çekiyoruz
                 {
-                    model.Name = user.Firstname + " " + user.Lastname;
-                    model.Email = user.Email;
-                    model.Message = "ok";
-                    model.LoginDate = DateTime.Now;
-                    model.IsLogin = true;
+                    xyz.Name = user.Firstname + " " + user.Lastname;
+                    xyz.Email = user.Email;
+                    xyz.Message = "ok";
+                    xyz.LoginDate = DateTime.Now;
+                    xyz.IsLogin = true;
                 }
             }
 
-            return model;
+            return xyz;
         }
 
 
 
-        public User Update(User user)
+        public User Update(RegisterModel user)
         {
-            var updateuser = context.Users.Find(user.Id);           //Find(model.Id) diyerek object ulaşıyoruz
-            updateuser.Firstname = user.Firstname;                               //Add'deki tanımlama yaparak yazıyoruz
-            updateuser.Lastname = user.Lastname;
-            updateuser.Email = user.Email;
-            updateuser.Password = user.Password;
-            context.Users.Update(updateuser);                          //Update ile gönderiyoruz
-            context.SaveChanges();
-            user.Id = updateuser.Id;                                //kaydediyoruz
-            return user;
-        }
-
-        public RegisterReturnModel Register(RegisterModel register)
-        {
-            RegisterReturnModel registerReturnModel = new RegisterReturnModel()
+            var updateuser = GetByPassword(user.Password);
+            if (updateuser != null)
             {
-                IsRegistered = false,
+                updateuser.Firstname = user.Firstname;                               //Add'deki tanımlama yaparak yazıyoruz
+                updateuser.Lastname = user.Lastname;
+                updateuser.Email = user.Email;
+                updateuser.Password = user.Password;
+                
+                context.Users.Update(updateuser);                          //Update ile gönderiyoruz
+                context.SaveChanges();
+            }
+            
+            //user.Password = updateuser.Password;                            
+            user.Password = updateuser.Password;                            
+            return updateuser;
+        }
+
+        public RegisterReturnModel Register(RegisterModel user)
+        {
+            RegisterReturnModel asd = new RegisterReturnModel()     //asd olarak yerel değişken tanımlıyoruz
+            {
+                IsRegistered = false, 
                 Message = ""
-            };
-            var userDb = GetByEmail(register.Email);
-            if (userDb != null)
+            }; 
+            var userDb = GetByEmail(user.Email);           //Email'e ulaşıyoruz 
+            if (userDb != null)  
             {
-                registerReturnModel.Message = "Bu Kayıt daha önce yaratılmış!";
-                return registerReturnModel;
+                asd.Message = "Bu Kayıt daha önce yaratılmış!";
+                return asd;
             }
-            if (string.IsNullOrEmpty(register.Password) )
+            if (string.IsNullOrEmpty(user.Password))
             {
-                registerReturnModel.Message = "Şifre geçersiz!";
-                return registerReturnModel;
+                asd.Message = "Şifre geçersiz!";
+                return asd;
 
             }
-            if (register.Password != register.Password2)
+            if (user.Password != user.Password2)
             {
-                registerReturnModel.Message = "Şifre tekrarı geçersiz!";
-                return registerReturnModel;
+                asd.Message = "Şifre tekrarı geçersiz!";
+                return asd;
             }
             // TODO diğer validations (email adres mi,ad soyad var mı)
             userDb = new User()
             {
-                Email = register.Email,
-                Firstname = register.Firstname,
-                Lastname = register.Lastname,
-                Password = register.Password
-
+                Email = user.Email,
+                Firstname = user.Firstname,
+                Lastname = user.Lastname,
+                Password = user.Password
+                
             };
             userDb = add(userDb);
             if (userDb != null && userDb.Id > 0)
             {
-                registerReturnModel.Message = "ok";
-                registerReturnModel.IsRegistered = true;
-                registerReturnModel.Email = register.Email;
-                registerReturnModel.Name = register.Firstname + " " + register.Lastname;
+                asd.Message = "ok";
+                asd.IsRegistered = true;
+                asd.Email = user.Email;
+                asd.Name = user.Firstname + " " + user.Lastname;
             }
-            return registerReturnModel;
+            return asd;
         }
 
-        public User GetByEmail(string email)
+        public User GetByEmail(string email) //burada email çekiyoruz
         {
             return context.Users.Where(x => x.Email == email).FirstOrDefault();
+        }
+        public User GetByPassword(string password) 
+        {
+            return context.Users.Where(x => x.Password == password).FirstOrDefault();
         }
     }
 }

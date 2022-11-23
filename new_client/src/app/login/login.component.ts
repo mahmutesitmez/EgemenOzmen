@@ -10,6 +10,9 @@ import { BackendService } from '../backendservice';
 export class LoginComponent implements OnInit {
   public email = "";
   public password = "";
+  public Error = "email ya da şifre hatalı";
+  public IsLogin =true;
+  
   constructor(private service: BackendService,
     private router:Router) { }
 
@@ -19,11 +22,21 @@ export class LoginComponent implements OnInit {
   doLogin() {
     this.service.login(this.email, this.password).subscribe((data: any) => {
       console.log(data);
+     
+      this.IsLogin = data.isLogin;
+      console.log(this.IsLogin);
       if (data.isLogin) {
         this.service.setClientUser(data);
         this.router.navigate(['']);
+       
+      }
+      else{
+        this.Error
       }
     })
+  }
+  goRegister(){
+    this.router.navigate(['/register']);
   }
 
 }

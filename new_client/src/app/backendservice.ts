@@ -46,6 +46,29 @@ export class BackendService {
   getById(id: number) {
     return this.HttpClient.get(this.baseURL + "/api" + "/Category/" + id)
   }
+  getUser(id:number){
+    return this.HttpClient.get(this.baseURL + "/api" + "/User/" + id)
+  }
+  updateUser(firstname:string, lastname:string , email: string, password: string, password2: string){
+    let update = {
+      Firstname: firstname,
+      Lastname: lastname,
+      Email: email,
+      Password: password,
+      Password2 :password2
+      
+    };
+    console.log("update",update)
+   
+    return this.HttpClient.put(this.baseURL + "/api" + "/User/"+ password + "/" + email, update)
+   
+  
+  }
+  
+  deleteUser(){
+
+  }
+
   login(email: string, password: string) {
     let model = {
       Email: email,
@@ -54,13 +77,34 @@ export class BackendService {
     console.log("model", model);
     return this.HttpClient.post(this.baseURL + "/api" + "/User/Login", model);
   }
+  register(firstname:string, lastname:string , email: string, password: string, password2: string, ){
+    let register = {
+      Firstname: firstname,
+      Lastname: lastname,
+      Email: email,
+      Password: password,
+      Password2 :password2,
+      
+    };
+    console.log("register",register)
+    return this.HttpClient.post(this.baseURL + "/api" + "/User/Register", register)
+   
+  }
 
+  newClientUser(data: any) { //web service'te [frombody] olmadan nasıl gönderilir???
+    let userNG: UserNG = new UserNG(data.name,
+      data.email,
+      data.isRegistered);
+      console.log(userNG);
+    sessionStorage.setItem(this.USER_KEY, JSON.stringify(userNG));
+  }
   setClientUser(data: any) {
     let userNG: UserNG = new UserNG(data.name,
       data.email,
       data.loginDate);
     sessionStorage.setItem(this.USER_KEY, JSON.stringify(userNG));
   }
+
   getClientUser() {
     let userng: any = sessionStorage.getItem(this.USER_KEY);
     if (userng != null) {
